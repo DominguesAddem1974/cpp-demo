@@ -1,0 +1,5 @@
+# build dirtectory
+build/
+
+# log file
+*.log
