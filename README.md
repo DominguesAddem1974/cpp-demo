@@ -1,4 +1,4 @@
-## Conan + Cmake + Gtest
+## Conan + CMake + GoogleTest
 
 ## Connan Install
 

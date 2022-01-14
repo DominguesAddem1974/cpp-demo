@@ -12,7 +12,7 @@ build: cmake
 	cd build && make
 
 test: build
-	cd build && ctest
+	cd build && ctest --verbose
 
 all: build
 .PHONY : all
