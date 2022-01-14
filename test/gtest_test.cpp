@@ -1,8 +1,6 @@
 #include <gtest/gtest.h>
 
-int Add(int a, int b) {
-    return a + b;
-}
+#include "function.h"
 
 TEST(testCase, test1) {
     EXPECT_EQ(Add(2, 3), 5);
