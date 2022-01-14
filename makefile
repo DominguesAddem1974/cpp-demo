@@ -14,5 +14,8 @@ build: cmake
 test: build
 	cd build && ctest --verbose
 
+clean:
+	@cd build && make clean
+
 all: build
 .PHONY : all
