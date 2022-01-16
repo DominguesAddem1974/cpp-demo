@@ -2,7 +2,7 @@ default_target: all
 .PHONY : default_target
 
 prepare:
-	@mkdir build &
+	mkdir -p build &
 	cd build && conan install ..
 	cd build && rm CMakeCache.txt &
 
