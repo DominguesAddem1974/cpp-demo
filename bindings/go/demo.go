@@ -7,10 +7,14 @@ package demo
 */
 import "C"
 
-func Add(num1 int, num2 int) int {
+func CAdd(num1 int, num2 int) int {
 	num1C := C.int(num1)
 	num2C := C.int(num2)
 	r := C.Add(num1C, num2C)
 
 	return int(r)
+}
+
+func Add(num1 int, num2 int) int {
+	return num1 + num2
 }
