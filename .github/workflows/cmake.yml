@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Install
-        run: sudo apt-get install -y conan go cmake gcc clang make git golang
+        run: sudo apt-get install -y conan cmake gcc clang make git golang
 
   build:
     runs-on: ubuntu-latest
