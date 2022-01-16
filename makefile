@@ -18,14 +18,11 @@ clean:
 	@cd build && make clean
 
 go-binding: release
-	@mkdir -p ./bindings/go/release
-	@cp -r build/{bin,lib} ./bindings/go/release/
-	@mkdir -p ./bindings/go/include
-	@cp -r include ./bindings/go/
+	mkdir -p ./bindings/go/release
+	cp -r build/{bin,lib} ./bindings/go/release/
+	mkdir -p ./bindings/go/include
+	cp -r include ./bindings/go/
 	@# CGO_CFLAGS="-I${PWD}/include" CGO_LDFLAGS="-I${PWD}/release/lib" go build -o release/go-bindings/go-demo ./bindings/go/demo.go
-	@# CGO_CFLAGS="-I${PWD}/include" CGO_LDFLAGS="-I${PWD}/release/lib" go build -o release/go-bindings/go-demo ./bindings/go/demo.go
-	@# cgo LDFLAGS: -L"${SRCDIR}/release/lib" -lstdc++ -ldemo_static
-	@# cgo CXXFLAGS: -std=c++14 -I"${SRCDIR}"
 	go build -o release/go-bindings/go-demo ./bindings/go/demo.go
 
 release: build
