@@ -25,7 +25,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Conan Install
+    - name: Install
+      run: sudo apt-get install -y python3 python3-pip cmake gcc clang make git golang && pip3 install conan
+
+    - name: Conan Package Install
       working-directory: ${{github.workspace}}
       run: mkdir -p build && cd build && conan install ..
 
