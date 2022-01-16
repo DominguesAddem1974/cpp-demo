@@ -29,6 +29,9 @@ go-binding: release
 go-test: go-binding
 	cd ./bindings/go/ && go test -v
 
+go-benchmark: go-binding
+	cd ./bindings/go/ && go test -benchmem -bench .
+
 release: build
 	mkdir -p release
 	cp -r build/{bin,lib} release/
