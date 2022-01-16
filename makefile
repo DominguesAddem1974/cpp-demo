@@ -3,6 +3,7 @@ default_target: all
 
 prepare:
 	@mkdir build &
+	cd build && conan install ..
 	cd build && rm CMakeCache.txt &
 
 cmake: prepare
@@ -24,6 +25,9 @@ go-binding: release
 	cp -r include ./bindings/go/
 	@# CGO_CFLAGS="-I${PWD}/include" CGO_LDFLAGS="-I${PWD}/release/lib" go build -o release/go-bindings/go-demo ./bindings/go/demo.go
 	go build -o release/go-bindings/go-demo ./bindings/go/demo.go
+
+go-test: go-binding
+	cd ./bindings/go/ && go test -v
 
 release: build
 	mkdir -p release
