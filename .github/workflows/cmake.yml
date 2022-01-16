@@ -24,6 +24,7 @@ jobs:
 
     steps:
     - name: build
+      working-directory: ${{github.workspace}}
       run: make
 
     - name: ctest
