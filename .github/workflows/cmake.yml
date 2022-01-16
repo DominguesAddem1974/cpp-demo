@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Install
-        run: sudo apt-get install -y conan cmake gcc clang make git golang
+        run: sudo apt-get install -y python3 python3-pip cmake gcc clang make git golang && pip3 install conan
 
   build:
     runs-on: ubuntu-latest
